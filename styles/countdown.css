@@ -25,21 +25,24 @@ h1 {
 }
 
 #letters ul {
-	width: 400px;
-	margin: 0 auto;
+	width: 550px;
+	margin: 20px auto;
 }
 
 #letters li {
 	display: inline;
-	margin: 3px;
+	margin: 2px;
 }
 
 #letters input {
 	text-align: center;	
-}
-
-#letters input {
-	width: 2em;
+	background-color: #6e60c8;
+	color: #fff;
+	border: none;
+	width: 1.8em;
+	height: 1.4em;
+	font-weight: bold;
+	font-size: 1.8em;
 }
 
 .guesses  {
