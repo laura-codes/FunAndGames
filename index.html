@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>A place to play</title>
+		<link rel="stylesheet" type="text/css" href="styles/countdown.css">
+	</head>
+	<body>
+		<h1>Countdown!</h1>
+		<div id="letters">
+			<ul>
+				<li><input type="text" readonly="readonly"></input></li>
+				<li><input type="text" readonly="readonly"></input></li>
+				<li><input type="text" readonly="readonly"></input></li>
+				<li><input type="text" readonly="readonly"></input></li>
+				<li><input type="text" readonly="readonly"></input></li>
+				<li><input type="text" readonly="readonly"></input></li>
+				<li><input type="text" readonly="readonly"></input></li>
+				<li><input type="text" readonly="readonly"></input></li>
+				<li><input type="text" readonly="readonly"></input></li>
+			</ul>
+			<button id="addVowel" data-letter-type="vowel">Vowel</button>
+			<button id="addConsonant" data-letter-type="consonant">Consonant</button>
+		</div>
+		<div id="guesses">
+			<textarea></textarea>
+		</div>
+
+		<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+		<script src="scripts/countdown.js"></script>
+	</body>
+</html>
