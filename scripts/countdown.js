@@ -52,6 +52,7 @@ $(document).ready(function(){
 	$('#makeGuess').on('click', function(){
 		var guess = $('#word').val();
 		addGuessToList(guess);
+		$('#word').val('').focus();
 	});
 });
 
