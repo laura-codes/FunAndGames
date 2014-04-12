@@ -17,7 +17,17 @@ $(document).ready(function(){
 		$("#letters li:nth-child(" + nextLetter + ") input").val(randomLetter);
 		numberOfPickedLetters ++;
 	});
+
+	$('#makeGuess').on('click', function(){
+		var guess = $('#word').val();
+		addGuessToList(guess);
+	});
 });
+
+function addGuessToList(guess){
+	var length = guess.length;
+	$('#' + length + 'letters').append('<li>' + guess + '</li>');
+}
 
 function getRandomLetter(type){
 	var letters = getLetters(type);
