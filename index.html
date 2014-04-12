@@ -18,12 +18,12 @@
 				<li><input type="text" readonly="readonly"></input></li>
 				<li><input type="text" readonly="readonly"></input></li>
 			</ul>
-			<div>
-				<button id="addVowel" data-letter-type="vowel">Vowel</button>
-				<button id="addConsonant" data-letter-type="consonant">Consonant</button>
-			</div>
 		</div>
-		<div>
+		<div id="addLetterContainer" class="controls">
+			<button id="addVowel" data-letter-type="vowel">Vowel</button>
+			<button id="addConsonant" data-letter-type="consonant">Consonant</button>
+		</div>
+		<div id="addWordContainer" class="controls" style="display:none;">
 			<input type="text" id="word"></input>
 			<button id="makeGuess">Add</button>
 		</div>

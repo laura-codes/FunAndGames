@@ -1,5 +1,6 @@
 
 var numberOfPickedLetters = 0;
+var maximumNumberOfLetters = 9;
 
 var vowelsSource = [ 	{ letter: 'A', distribution: 15 },
 						{ letter: 'E', distribution: 21 },
@@ -34,13 +35,18 @@ var consonants;
 $(document).ready(function(){
 
 	initialiseLetters();
-	$("#letters").on('click', 'button', function(){
+	$("#addLetterContainer").on('click', 'button', function(){
 		var letterType = $(this).data('letter-type');
 		
 		var nextLetter = numberOfPickedLetters + 1;
 		var randomLetter = getRandomLetter(letterType);
 		$("#letters li:nth-child(" + nextLetter + ") input").val(randomLetter);
 		numberOfPickedLetters ++;
+
+		if (numberOfPickedLetters == maximumNumberOfLetters){
+			$('#addLetterContainer').hide(1000);
+			$('#addWordContainer').show(1000);
+		}
 	});
 
 	$('#makeGuess').on('click', function(){
