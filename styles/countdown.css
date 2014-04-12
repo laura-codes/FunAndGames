@@ -42,7 +42,27 @@ h1 {
 	width: 2em;
 }
 
-#guesses textarea {
-	width: 600px;
+.guesses  {
+	width: 90%;
 	margin: 0 auto;
+}
+
+.guesses > li {
+	float: left; width: 15%; 
+	margin: 1px;
+}
+
+.guesses > li > ul {
+	display: block;
+	width: 100%;
+}
+
+.guesses h3 {
+	text-align: center;
+}
+
+.guesses > li > ul > li { 
+	display: block;
+	float: none;
+	text-align: center;
 }
