@@ -1,6 +1,10 @@
 
 var numberOfPickedLetters = 0;
 var maximumNumberOfLetters = 9;
+var countdownRefreshInterval;
+var countdownTimeout;
+var countdownLengthInSeconds = 30;
+
 
 var vowelsSource = [ 	{ letter: 'A', distribution: 15 },
 						{ letter: 'E', distribution: 21 },
@@ -31,6 +35,7 @@ var consonantsSource = [	{ letter: 'B', distribution: 2 },
 
 var vowels;
 var consonants;
+var countdownTimer;
 
 $(document).ready(function(){
 
@@ -44,8 +49,7 @@ $(document).ready(function(){
 		numberOfPickedLetters ++;
 
 		if (numberOfPickedLetters == maximumNumberOfLetters){
-			$('#addLetterContainer').hide(1000);
-			$('#addWordContainer').show(1000);
+			startCountdown();
 		}
 	});
 
@@ -106,3 +110,36 @@ function knuthFisherYatesShuffle(array){
 	};
 	return array;
 }
+
+var timeAtCountdownEnd;
+
+function startCountdown(){
+	$('#addLetterContainer').hide(1000);
+	$('#addWordContainer').show(1000);
+	countdownTimeout = 	setTimeout(stopCountdown, toMilliseconds(countdownLengthInSeconds));
+	timeAtCountdownEnd = currentTimeInSeconds() + countdownLengthInSeconds;
+	countdownRefreshInterval = setInterval(refreshCountdownDisplay, 500);
+}
+
+function toMilliseconds(seconds){
+	return seconds * 1000;
+}
+
+function stopCountdown(){
+	clearInterval(countdownRefreshInterval);
+	setCountdownDispay("Time's up!");
+}
+
+function refreshCountdownDisplay(){
+	var secondsLeft = Math.round(timeAtCountdownEnd - currentTimeInSeconds());
+	setCountdownDispay(secondsLeft);
+}
+
+function currentTimeInSeconds(){
+	return new Date().getTime() / 1000;
+}
+
+function setCountdownDispay(message){
+	$('#countdown').val(message);
+}
+
